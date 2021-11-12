@@ -2,10 +2,30 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "build": "nuxi build -- build",
+    "start": "node build/.output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt3": "latest"
-  }
+    "nuxt3": "^3.0.0-27277498.850ef69",
+    "prisma": "^3.4.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.4.2",
+    "quagga": "^0.12.1",
+    "uuid": "^8.3.2"
+  },
+  "name": "easy-life-nuxt3",
+  "description": "We recommend to look at the [documentation](https://v3.nuxtjs.org).",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenights/easy-life-nuxt3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codenights/easy-life-nuxt3/issues"
+  },
+  "homepage": "https://github.com/codenights/easy-life-nuxt3#readme"
 }
