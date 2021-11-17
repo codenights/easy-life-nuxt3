@@ -27,27 +27,30 @@ const addItem = async () => {
   await $fetch('/api/to-buy-list', {
     method: 'POST',
     header: {
-      'Content-type': 'application/json'
+      'content-type': 'application/json'
     },
     body: {
       listId: list.value.id,
       title: item.value
     }
   })
-  const { data } = await useFetch(`/api/to-buy-list?id=${route.params.id}`)
-  list.value = data.value
+  console.log('routeId', route.params.id)
+  const data = await $fetch(`/api/to-buy-list?id=${route.params.id}`)
+  console.log('after fetch', data)
+  list.value = data
 }
 const removeItem = async (itemId) => {
   await $fetch(`/api/to-buy-list?id=${itemId}`, {
     method: 'DELETE'
   })
-  const { data } = await useFetch(`/api/to-buy-list?id=${route.params.id}`)
-  list.value = data.value
+  const data = await $fetch(`/api/to-buy-list?id=${route.params.id}`)
+  console.log('after fetch', data)
+  list.value = data
 }
 </script>
 
 <template>
-  <div>
+  <div class="to-buy-list">
     <h3>Liste de course id n° {{ $route.params.id }}</h3>
     <h3>Liste récupéré id n° {{ list.id }}</h3>
     {{ $route.params }}
@@ -60,3 +63,12 @@ const removeItem = async (itemId) => {
     <button @click="addItem">Add Item !</button>
   </div>
 </template>
+
+<style>
+.to-buy-list {
+  width: 80%;
+  margin: 64px auto;
+  background-color: #EEEEEE;
+  border: 2px solid aquamarine;
+}
+</style>

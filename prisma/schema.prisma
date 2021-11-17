@@ -11,13 +11,13 @@ datasource db {
 }
 
 model Item {
-  id        String   @id @default(uuid())
+  id        String   @id
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
-  picture   String?   @db.VarChar(255)
-  list      List?    @relation(fields: [listId], references: [id])
-  listId    String?
+  picture   String?  @db.VarChar(255)
+  list      List    @relation(fields: [listId], references: [id])
+  listId    String
 }
 
 model List {

@@ -3,7 +3,7 @@ const { PrismaClient } = Prisma
 
 export class AddItemUseCase {
 
-  async execute(listId, item) {
+  async execute(listId: string, item: Prisma.Item) {
     const prisma = new PrismaClient()
     console.log(item)
     try {

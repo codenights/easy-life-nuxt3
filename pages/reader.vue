@@ -98,11 +98,9 @@ const triggerSearch = async () => {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700|Cabin+Condensed:400,600");
-
 body {
   background-color: #FFF;
-  margin: 0px;
+  margin: 0;
   font-family: Ubuntu, sans-serif;
   color: #1e1e1e;
   font-weight: normal;

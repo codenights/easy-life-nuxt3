@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http'
-import {toBuyListController} from "~/src/api/dependency-injection";
+import { toBuyListController } from "../../src/api/dependency-injection";
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   const { method } = req
